@@ -1,4 +1,4 @@
-const dummyProducts = {	
+const fakeProducts = {	
     airpods: { name: "Airpods", price: "199", img: "airpods.jpg" },	
     shoe: { name: "Air Jordans", price: "125", img: "air-jordans.jpg" },	
     iphone: { name: "Smartphone", price: "699", img: "smartphone.jpg" },	
@@ -9,14 +9,14 @@ const dummyProducts = {
 
 // Init sandbox products
 var pricingTables = document.getElementById("pricing-tables");
-for (const key in dummyProducts) {
-    if (dummyProducts.hasOwnProperty(key)) {
-        const element = dummyProducts[key];
+for (const key in fakeProducts) {
+    if (fakeProducts.hasOwnProperty(key)) {
+        const element = fakeProducts[key];
         pricingTables.innerHTML += `
             <div class="pure-u-1 pure-u-md-1-3">
                 <div class="pricing-table dummy-product stripe">
                     <div class="pricing-table-header">
-                        <span class="pricing-table-price">${element.name} ${element.price}$</span>
+                        <span class="pricing-table-price">Fake ${element.name} ${element.price}$</span>
                     </div>
                     <div class="pricing-table-footer">
                         <button class="sell-button pure-button" data-product="${key}">Sell</button>
@@ -29,7 +29,7 @@ for (const key in dummyProducts) {
 
 // Simulate team 1 sell buy button: Add dummy sell / buy button for sending custom event
 var dispatchSellEvent = function() {
-    productId = this.getAttribute("data-product");
+    const productId = this.getAttribute("data-product");
     console.log(`[SIMULATE TEAM 2] Emit event sell ${productId}`);
     this.dispatchEvent(
         new CustomEvent("team-two-sell", {
@@ -40,7 +40,7 @@ var dispatchSellEvent = function() {
 };
 
 var dispatchBuyEvent = function() {
-    productId = this.getAttribute("data-product");
+    const productId = this.getAttribute("data-product");
     console.log(`[SIMULATE TEAM 2] Emit event buy ${productId}`);
     this.dispatchEvent(
         new CustomEvent("team-two-buy", {
