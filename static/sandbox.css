@@ -1,0 +1,23 @@
+.stripe {
+    background: repeating-linear-gradient(45deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2) 10px,rgba(0, 0, 0, 0.3) 10px,rgba(0, 0, 0, 0.3) 20px);
+}
+
+.pricing-table.dummy-product {
+    height: 300px;
+}
+
+.pricing-table.dummy-product .pricing-table-header {
+    background: transparent;
+    position: relative;
+    top: 100px;
+}
+
+.pricing-table.dummy-product .pricing-table-footer {
+    position: relative;
+    top: 220px;
+}
+
+.pricing-table.dummy-product .pricing-table-price {
+    font-size: 18px;
+    color: #000000;
+}
