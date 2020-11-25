@@ -9,8 +9,5 @@ services:
     hostname: "team-three"
     build: .
     image: team-three
-    networks:
-      - micro-frontend
-networks:
-  micro-frontend:
-    driver: bridge
+    ports:
+      - 8080:8080
